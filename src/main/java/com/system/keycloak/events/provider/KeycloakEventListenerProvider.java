@@ -1,6 +1,6 @@
-package com.platform.keycloak.events.provider;
+package com.system.keycloak.events.provider;
 
-import com.platform.keycloak.events.application.RegistrationEventProcessor;
+import com.system.keycloak.events.application.RegistrationEventProcessor;
 import org.jboss.logging.Logger;
 import org.keycloak.events.Event;
 import org.keycloak.events.EventListenerProvider;
@@ -12,13 +12,13 @@ import org.keycloak.models.UserModel;
 
 import java.time.Instant;
 
-public final class PlatformEventListenerProvider implements EventListenerProvider {
-    private static final Logger LOGGER = Logger.getLogger(PlatformEventListenerProvider.class);
+public final class KeycloakEventListenerProvider implements EventListenerProvider {
+    private static final Logger LOGGER = Logger.getLogger(KeycloakEventListenerProvider.class);
 
     private final KeycloakSession session;
     private final RegistrationEventProcessor processor;
 
-    public PlatformEventListenerProvider(KeycloakSession session, RegistrationEventProcessor processor) {
+    public KeycloakEventListenerProvider(KeycloakSession session, RegistrationEventProcessor processor) {
         this.session = session;
         this.processor = processor;
     }

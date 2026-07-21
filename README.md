@@ -1,6 +1,6 @@
-# Platform.Keycloak.Events
+# Keycloak.Events
 
-Keycloak Event Listener plugin publish su kien `REGISTER` sang Kafka topic ingest cua `Platform.Identity.API`.
+Keycloak Event Listener plugin publish su kien `REGISTER` sang Kafka topic ingest cua `Identity.API`.
 
 ## Package layout
 
@@ -21,7 +21,7 @@ CI runs on GitHub Actions with JDK 17:
 
 - `.github/workflows/ci.yml`
 - `mvn -B clean verify`
-- uploads `target/platform-keycloak-events.jar` as a workflow artifact
+- uploads `target/keycloak-events.jar` as a workflow artifact
 
 Recommended on Windows:
 
@@ -44,31 +44,31 @@ On Windows:
 
 Artifact output:
 
-- `Platform.Keycloak.Events/target/platform-keycloak-events.jar`
+- `Keycloak.Events/target/keycloak-events.jar`
 
 ## Deploy local
 
 1. Build jar.
-2. Copy jar vao `Platform.IaC/keycloak/providers/`.
+2. Copy jar vao `IaC/keycloak/providers/`.
 3. Restart Keycloak.
 4. Trong Keycloak Admin Console:
    - `Realm Settings`
    - `Events`
-   - them listener `platform-event-listener`
+   - them listener `event-listener`
 
 Run E2E checklist:
 
-- `Platform.IaC/KEYCLOAK_IDENTITY_WALLET_E2E.md`
+- `IaC/KEYCLOAK_IDENTITY_WALLET_E2E.md`
 
 ## Required env vars
 
-- `PLATFORM_KEYCLOAK_EVENTS_KAFKA_BOOTSTRAP_SERVERS`
-- `PLATFORM_KEYCLOAK_EVENTS_KAFKA_TOPIC`
+- `KEYCLOAK_EVENTS_KAFKA_BOOTSTRAP_SERVERS`
+- `KEYCLOAK_EVENTS_KAFKA_TOPIC`
 
 ## Optional env vars
 
-- `PLATFORM_KEYCLOAK_EVENTS_KAFKA_CLIENT_ID`
-- `PLATFORM_KEYCLOAK_EVENTS_KAFKA_SECURITY_PROTOCOL`
-- `PLATFORM_KEYCLOAK_EVENTS_KAFKA_SASL_MECHANISM`
-- `PLATFORM_KEYCLOAK_EVENTS_KAFKA_SASL_USERNAME`
-- `PLATFORM_KEYCLOAK_EVENTS_KAFKA_SASL_PASSWORD`
+- `KEYCLOAK_EVENTS_KAFKA_CLIENT_ID`
+- `KEYCLOAK_EVENTS_KAFKA_SECURITY_PROTOCOL`
+- `KEYCLOAK_EVENTS_KAFKA_SASL_MECHANISM`
+- `KEYCLOAK_EVENTS_KAFKA_SASL_USERNAME`
+- `KEYCLOAK_EVENTS_KAFKA_SASL_PASSWORD`

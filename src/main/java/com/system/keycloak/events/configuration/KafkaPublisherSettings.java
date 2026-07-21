@@ -1,4 +1,4 @@
-package com.platform.keycloak.events.configuration;
+package com.system.keycloak.events.configuration;
 
 public record KafkaPublisherSettings(
     String bootstrapServers,

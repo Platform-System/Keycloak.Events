@@ -1,4 +1,4 @@
-package com.platform.keycloak.events.configuration;
+package com.system.keycloak.events.configuration;
 
 public final class KafkaPublisherSettingsLoader {
     private KafkaPublisherSettingsLoader() {
@@ -6,13 +6,13 @@ public final class KafkaPublisherSettingsLoader {
 
     public static KafkaPublisherSettings loadFromEnvironment() {
         return new KafkaPublisherSettings(
-            requireEnv("PLATFORM_KEYCLOAK_EVENTS_KAFKA_BOOTSTRAP_SERVERS"),
-            requireEnv("PLATFORM_KEYCLOAK_EVENTS_KAFKA_TOPIC"),
-            readEnv("PLATFORM_KEYCLOAK_EVENTS_KAFKA_CLIENT_ID", "platform-keycloak-events"),
-            normalizeKafkaEnum(readEnv("PLATFORM_KEYCLOAK_EVENTS_KAFKA_SECURITY_PROTOCOL", "")),
-            normalizeKafkaEnum(readEnv("PLATFORM_KEYCLOAK_EVENTS_KAFKA_SASL_MECHANISM", "")),
-            readEnv("PLATFORM_KEYCLOAK_EVENTS_KAFKA_SASL_USERNAME", ""),
-            readEnv("PLATFORM_KEYCLOAK_EVENTS_KAFKA_SASL_PASSWORD", ""));
+            requireEnv("KEYCLOAK_EVENTS_KAFKA_BOOTSTRAP_SERVERS"),
+            requireEnv("KEYCLOAK_EVENTS_KAFKA_TOPIC"),
+            readEnv("KEYCLOAK_EVENTS_KAFKA_CLIENT_ID", "keycloak-events"),
+            normalizeKafkaEnum(readEnv("KEYCLOAK_EVENTS_KAFKA_SECURITY_PROTOCOL", "")),
+            normalizeKafkaEnum(readEnv("KEYCLOAK_EVENTS_KAFKA_SASL_MECHANISM", "")),
+            readEnv("KEYCLOAK_EVENTS_KAFKA_SASL_USERNAME", ""),
+            readEnv("KEYCLOAK_EVENTS_KAFKA_SASL_PASSWORD", ""));
     }
 
     private static String requireEnv(String key) {

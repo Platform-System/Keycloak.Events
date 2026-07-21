@@ -1,11 +1,11 @@
-package com.platform.keycloak.events.infrastructure;
+package com.system.keycloak.events.infrastructure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.platform.keycloak.events.configuration.KafkaPublisherSettings;
-import com.platform.keycloak.events.domain.IdentityUserRegisteredMessage;
-import com.platform.keycloak.events.ports.IdentityEventPublisher;
+import com.system.keycloak.events.configuration.KafkaPublisherSettings;
+import com.system.keycloak.events.domain.IdentityUserRegisteredMessage;
+import com.system.keycloak.events.ports.IdentityEventPublisher;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;

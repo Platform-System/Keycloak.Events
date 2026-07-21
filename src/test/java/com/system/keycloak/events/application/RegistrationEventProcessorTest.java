@@ -1,7 +1,7 @@
-package com.platform.keycloak.events.application;
+package com.system.keycloak.events.application;
 
-import com.platform.keycloak.events.domain.IdentityUserRegisteredMessage;
-import com.platform.keycloak.events.ports.IdentityEventPublisher;
+import com.system.keycloak.events.domain.IdentityUserRegisteredMessage;
+import com.system.keycloak.events.ports.IdentityEventPublisher;
 import org.junit.jupiter.api.Test;
 import org.keycloak.events.EventType;
 

@@ -1,25 +1,25 @@
-package com.platform.keycloak.events.provider;
+package com.system.keycloak.events.provider;
 
-import com.platform.keycloak.events.application.RegistrationEventProcessor;
-import com.platform.keycloak.events.configuration.KafkaPublisherSettings;
-import com.platform.keycloak.events.configuration.KafkaPublisherSettingsLoader;
-import com.platform.keycloak.events.infrastructure.KafkaIdentityEventPublisher;
-import com.platform.keycloak.events.ports.IdentityEventPublisher;
+import com.system.keycloak.events.application.RegistrationEventProcessor;
+import com.system.keycloak.events.configuration.KafkaPublisherSettings;
+import com.system.keycloak.events.configuration.KafkaPublisherSettingsLoader;
+import com.system.keycloak.events.infrastructure.KafkaIdentityEventPublisher;
+import com.system.keycloak.events.ports.IdentityEventPublisher;
 import org.keycloak.Config;
 import org.keycloak.events.EventListenerProvider;
 import org.keycloak.events.EventListenerProviderFactory;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.KeycloakSessionFactory;
 
-public final class PlatformEventListenerProviderFactory implements EventListenerProviderFactory {
-    private static final String LISTENER_ID = "platform-event-listener";
+public final class KeycloakEventListenerProviderFactory implements EventListenerProviderFactory {
+    private static final String LISTENER_ID = "event-listener";
 
     private IdentityEventPublisher publisher;
     private RegistrationEventProcessor processor;
 
     @Override
     public EventListenerProvider create(KeycloakSession session) {
-        return new PlatformEventListenerProvider(session, processor);
+        return new KeycloakEventListenerProvider(session, processor);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.platform.keycloak.events.domain;
+package com.system.keycloak.events.domain;
 
 import java.time.Instant;
 import java.util.UUID;
